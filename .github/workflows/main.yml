@@ -8,32 +8,32 @@ on:
 
 jobs:
   build-axolotl:
-    if: github.repository_owner == 'OpenAccess-AI-Collective'
+    if: github.repository_owner == 'FaycalD'
     # this job needs to be run on self-hosted GPU runners...
     strategy:
       fail-fast: false
       matrix:
         include:
-          - cuda: cu118
-            cuda_version: 11.8.0
-            python_version: "3.9"
-            pytorch: 2.0.0
-            axolotl_extras:
+          # - cuda: cu118
+          #   cuda_version: 11.8.0
+          #   python_version: "3.9"
+          #   pytorch: 2.0.0
+          #   axolotl_extras:
           - cuda: cu118
             cuda_version: 11.8.0
             python_version: "3.10"
-            pytorch: 2.0.0
+            pytorch: 2.0.1
             axolotl_extras:
-          - cuda: cu118
-            cuda_version: 11.8.0
-            python_version: "3.9"
-            pytorch: 2.0.0
-            axolotl_extras: gptq
-          - cuda: cu117
-            cuda_version: 11.7.1
-            python_version: "3.9"
-            pytorch: 1.13.1
-            axolotl_extras:
+          # - cuda: cu118
+          #   cuda_version: 11.8.0
+          #   python_version: "3.9"
+          #   pytorch: 2.0.0
+          #   axolotl_extras: gptq
+          # - cuda: cu117
+          #   cuda_version: 11.7.1
+          #   python_version: "3.9"
+          #   pytorch: 1.13.1
+          #   axolotl_extras:
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -64,31 +64,31 @@ jobs:
           cache-to: type=gha,mode=max
   build-axolotl-runpod:
     needs: build-axolotl
-    if: github.repository_owner == 'OpenAccess-AI-Collective'
+    if: github.repository_owner == 'FaycalD'
     # this job needs to be run on self-hosted GPU runners...
     strategy:
       matrix:
         include:
-          - cuda: cu118
-            cuda_version: 11.8.0
-            python_version: "3.9"
-            pytorch: 2.0.0
-            axolotl_extras:
+          # - cuda: cu118
+          #   cuda_version: 11.8.0
+          #   python_version: "3.9"
+          #   pytorch: 2.0.0
+          #   axolotl_extras:
           - cuda: cu118
             cuda_version: 11.8.0
             python_version: "3.10"
-            pytorch: 2.0.0
+            pytorch: 2.0.1
             axolotl_extras:
-          - cuda: cu118
-            cuda_version: 11.8.0
-            python_version: "3.9"
-            pytorch: 2.0.0
-            axolotl_extras: gptq
-          - cuda: cu117
-            cuda_version: 11.7.1
-            python_version: "3.9"
-            pytorch: 1.13.1
-            axolotl_extras:
+          # - cuda: cu118
+          #   cuda_version: 11.8.0
+          #   python_version: "3.9"
+          #   pytorch: 2.0.0
+          #   axolotl_extras: gptq
+          # - cuda: cu117
+          #   cuda_version: 11.7.1
+          #   python_version: "3.9"
+          #   pytorch: 1.13.1
+          #   axolotl_extras:
     runs-on: self-hosted
     steps:
       - name: Checkout
